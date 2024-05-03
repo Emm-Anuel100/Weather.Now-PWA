@@ -23,7 +23,7 @@ A weather PWA that provides current time and weather informations for any city a
 ## Requirements
 
 - Modern web browser (Chrome, Firefox, Edge, Safari, etc.)
-- If you prefer using the app on your mobile phone, you will need an Android device.
+- If you prefer using the app on your mobile phone, it should be an Android device.
 
 ## Installation
 

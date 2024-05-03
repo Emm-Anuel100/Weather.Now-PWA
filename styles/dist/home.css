@@ -1,0 +1,270 @@
+:root {
+  --padding: 0;
+  --margin: 0;
+  --box-sizing: border-box;
+  --outline: none;
+  --border: none;
+  --page-color: #eaeaea;
+  --text-decoration: none;
+  --font-family: sans-serif;
+  --overflow-x: hidden;
+  --page-width: 100%;
+  --page-height: 100vh;
+  --list-syle: none;
+  --flex-display: flex;
+  --justify-space-between: space-between;
+  --flex-wrap: wrap;
+  --gap: 1rem;
+  --animation-duration: 20s;
+  --animation-count-infinite: infinite;
+  --animation-direction: alternate;
+  --fas-fa-cloud-icon: rgb(115, 116, 117);
+}
+
+* {
+  padding: var(--padding);
+  margin: var(--margin);
+  box-sizing: var(--box-sizing);
+  outline: var(--outline);
+  border: var(--border);
+  text-decoration: var(--text-decoeation);
+  font-family: var(--font-family);
+  list-style: var(--list-syle);
+}
+
+body {
+  width: var(--page-width);
+  height: var(--page-height);
+  min-height: var(--page-height);
+  overflow-x: var(--overflow-x);
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+  background-attachment: fixed;
+  color: var(--page-color);
+}
+body header.page-header {
+  width: auto;
+  position: relative;
+  margin-top: 5%;
+  margin-left: 17%;
+  padding-top: 2rem;
+}
+body header.page-header input[type=text]#input-box {
+  height: 60px;
+  width: 80%;
+  border-radius: 4px;
+  background: #fffbfb;
+  border: 1px solid #f7f7f7f3;
+  padding: 0 2%;
+  display: inline;
+  font-size: 13px;
+  letter-spacing: 3;
+  cursor: pointer;
+  color: #807e7e;
+}
+body header.page-header label.input-label {
+  color: #807e7e;
+  position: absolute;
+  left: 1.5rem;
+  bottom: 37px;
+  background: #fffbfb;
+  font-size: 13.5px;
+  padding: 2.5px 10.5px;
+  pointer-events: none;
+  border-radius: 3px;
+}
+body header.page-header label.input-label.active {
+  bottom: 66px;
+  transition: ease-in-out 0.3s;
+  font-size: 10.5px;
+}
+body header.page-header button[type=submit] {
+  background: none;
+  cursor: pointer;
+}
+body header.page-header button[type=submit] i.fa {
+  color: #a8a7a7;
+  position: relative;
+  right: 3rem;
+  top: 2px;
+  font-size: 14px;
+}
+body header.page-header div.result-box {
+  background: #fffbfbf8;
+  z-index: 999;
+  position: absolute;
+  color: #a8a7a7;
+  top: auto;
+  width: 80%;
+  border-radius: 4px;
+  padding: 0 14px;
+  transition: ease-in 2s;
+  max-height: 43vh;
+  overflow-y: scroll;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+body header.page-header div.result-box::-webkit-scrollbar {
+  width: 4px;
+  background: #fffbfbe8;
+}
+body header.page-header div.result-box::-webkit-scrollbar-thumb {
+  background: #a8a7a7;
+  border-radius: 20px;
+}
+body header.page-header div.result-box ul li {
+  border-radius: 3px;
+  transition: ease-in-out 0.3s;
+  padding: 12.4px 10px;
+  font-size: 13px;
+  letter-spacing: 3;
+  color: #a8a7a7;
+}
+body header.page-header div.result-box ul li:hover {
+  font-size: 11px;
+  position: relative;
+  color: #858282;
+}
+body section.weather-properties-sec {
+  background: #fffbfb7c;
+  box-shadow: 2px 2px 3rem rgba(224, 224, 224, 0.527);
+  cursor: pointer;
+  height: auto;
+  padding: 18px 3%;
+  left: 11%;
+  border-radius: 4px;
+  width: 80%;
+  position: absolute;
+  bottom: 12vh;
+  justify-content: center;
+  overflow-x: hidden;
+}
+body section.weather-properties-sec section.sec1 {
+  animation-name: translate;
+}
+@keyframes translate1 {
+  0% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(30%);
+  }
+}
+body section.weather-properties-sec section.sec2 {
+  animation-name: translate;
+}
+@keyframes translate2 {
+  0% {
+    -webkit-transform: translateX(30%);
+    -moz-transform: translateX(30%);
+    transform: translateX(30%);
+  }
+  100% {
+    -webkit-transform: translateX(-20%);
+    -moz-transform: translateX(-20%);
+    transform: translateX(-20%);
+  }
+}
+body section.weather-properties-sec section.properties {
+  display: var(--flex-display);
+  justify-content: var(--justify-space-between);
+  flex-wrap: var(--flex-wrap);
+  gap: var(--gap);
+  animation-duration: var(--animation-duration);
+  animation-iteration-count: var(--animation-count-infinite);
+  animation-direction: var(--animation-direction);
+}
+body section.weather-properties-sec section.properties div.con {
+  background: transparent;
+  padding: 12px 10px;
+  border: 1.1px solid rgba(75, 74, 74, 0.712);
+  font-size: 14.3px;
+  box-shadow: 2px 1px 15px #4e4d4d;
+  border-radius: 0.3rem;
+  color: #0e0e0e;
+  font-weight: 400;
+}
+body section.weather-properties-sec section.properties div.con i.fas {
+  color: #d9d6f7;
+  animation-name: cloud;
+  animation-iteration-count: var(--animation-count-infinite);
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
+  animation-direction: alternate-reverse;
+}
+@keyframes cloud {
+  0% {
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    transform: scale(0.7);
+  }
+  100% {
+    -webkit-transform: scale(1.3);
+    -moz-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+}
+body::-webkit-scrollbar-thumb {
+  background: #414040;
+  border-radius: 20px;
+}
+body::-webkit-scrollbar {
+  width: 4px;
+  background: #eaeaea;
+}
+body footer.footer {
+  position: relative;
+  margin-left: 11%;
+  top: 72svh;
+  background: #eaeaea;
+  width: 14rem;
+  padding: 10px;
+  border-radius: 0.2rem;
+}
+body footer.footer h3.footer-text {
+  font-size: 12px;
+  font-weight: 100;
+  color: #2c2c2cfd;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body footer.footer h3.footer-text i.fa {
+  color: #ff4141;
+}
+body footer.footer h3.footer-text a:hover {
+  color: #6099eefd !important;
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 550px) {
+  body {
+    height: 130vh !important;
+  }
+  body header.page-header {
+    margin-left: 9% !important;
+  }
+  body header.page-header input[type=text]#input-box {
+    width: 93% !important;
+  }
+  body header.page-header div.result-box {
+    width: 93% !important;
+  }
+  body section.weather-properties-sec {
+    bottom: -14rem !important;
+  }
+  body footer.footer {
+    top: 119svh;
+  }
+}
+@media screen and (max-width: 350px) {
+  body {
+    height: 145vh;
+  }
+  body section.weather-properties-sec {
+    bottom: -20rem !important;
+  }
+  body footer.footer {
+    top: 139svh;
+  }
+}

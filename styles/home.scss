@@ -1,0 +1,390 @@
+
+:root{
+   --padding: 0; --margin: 0;
+   --box-sizing: border-box; --outline: none;
+   --border: none; --page-color: #eaeaea;
+   --text-decoration: none; --font-family: sans-serif;
+   --overflow-x: hidden; --page-width: 100%;
+   --page-height: 100vh; --list-syle: none; --flex-display: flex;
+   --justify-space-between: space-between; --flex-wrap: wrap; --gap: 1rem;
+   --animation-duration: 20s; --animation-count-infinite: infinite;
+   --animation-direction: alternate; --fas-fa-cloud-icon: rgb(115, 116, 117);
+}
+
+*{
+   padding: var(--padding);  margin: var(--margin);
+   box-sizing: var(--box-sizing);  outline: var(--outline);
+   border: var(--border);  text-decoration: var(--text-decoeation);
+   font-family: var(--font-family);  list-style: var(--list-syle);
+}
+
+body{
+   width: var(--page-width);  height: var(--page-height); min-height: var(--page-height);
+   overflow-x: var(--overflow-x); background-position: center;
+   background-size: cover; background-blend-mode: darken;
+   background-attachment: fixed; color: var(--page-color);
+
+   header.page-header{
+      //***** page-header mixin
+      @mixin page-header($width, $position, $top, $margin-left){
+         width: $width;
+         position: $position;
+         margin-top: $top;
+         margin-left: $margin-left;
+         padding-top: 2rem;
+      }
+
+      //***** page-header usage
+      @include page-header(auto, relative, 5%, 17%);
+
+
+      input[type="text"]#input-box{
+         //***** input-box mixin
+         @mixin input-box($height, $width, $border-radius, $background, $border, $padding, $display, $font-size, $letter-spacing, $cursor, $color){
+            height: $height;
+            width: $width;
+            border-radius: $border-radius;
+            background: $background;
+            border: $border;
+            padding: $padding;
+            display: $display;
+            font-size: $font-size;
+            letter-spacing: $letter-spacing;
+            cursor: $cursor;
+            color: $color;
+         }
+
+         //***** input-box usage
+         @include input-box(30 * 2px, 80%, 2 * 2px, #fffbfb, 1px solid #f7f7f7f3, 0 2%, inline, 13px, 3, pointer, #807e7e);
+      }
+
+      label.input-label{
+         //***** input-label mixin
+         @mixin input-label($color, $position, $left, $bottom, $background, $font-size, $font-weight, $padding, $pointer-events, $border-radius){
+            color: $color;
+            position: $position;
+            left: $left;
+            bottom: $bottom;
+            background: $background;
+            font-size: $font-size;
+            padding: $padding;
+            pointer-events: $pointer-events;
+            border-radius: $border-radius;
+         }
+
+         //***** input-label usage
+         @include input-label(#807e7e, absolute, 1.5rem, 30 + 7px, #fffbfb, 13.5px, 250 * 2, 2.5px 10.5px, none, 1.5 * 2px);
+
+         &.active{
+            //***** input-label active mixin
+            @mixin input-label-active($bottom, $transition, $font-size){
+               bottom: $bottom;
+               transition: $transition;
+               font-size: $font-size;
+            }
+
+            //***** input-label active usage
+            @include input-label-active(60 + 6px, ease-in-out .3s, 10.5px);
+         }
+      }
+
+      button[type="submit"]{
+         //***** submit button mixin
+         @mixin submitBtn($background, $cursor){
+            background: $background;
+            cursor: $cursor;
+          }
+
+          //***** submit button usage
+          @include submitBtn(none, pointer);
+
+         i.fa{
+            //***** search icon mixin
+            @mixin searchIcon($color, $position, $right, $top, $font-size){
+               color: $color;
+               position: $position;
+               right: $right;
+               top: $top;
+               font-size: $font-size;
+            }
+
+            //***** search icon usage
+            @include searchIcon(#a8a7a7, relative, 1.5 * 2rem, 2px, 14px);
+         }
+      }
+
+      div.result-box{
+         //***** result-box mixin
+         @mixin result-box($background, $z-index, $position, $color, $top, $width, $border-radius, $padding, $transition, $max-height, $overflow-y, $backdrop-filter, $cursor){
+            background: $background;
+            z-index: $z-index;
+            position: $position;
+            color: $color;
+            top: $top;
+            width: $width;
+            border-radius: $border-radius;
+            padding: $padding;
+            transition: $transition;
+            max-height: $max-height;
+            overflow-y: $overflow-y;
+            -webkit-backdrop-filter: $backdrop-filter;
+            backdrop-filter: $backdrop-filter;
+            cursor: $cursor;
+         }
+
+         //***** result-box usage
+         @include result-box(#fffbfbf8, 999, absolute, #a8a7a7, auto, 80%, 2 + 2px, 0 14px, ease-in 2s, 40 + 3vh, scroll, blur(5 + 5px), pointer);
+
+
+         &::-webkit-scrollbar{
+            width: 2 * 2px;
+            background: #fffbfbe8;
+         }
+
+         // Top & Bottom scroll button
+         // &::-webkit-scrollbar-button{
+         //    background: #a8a7a7;
+         //    height: 3px;
+         // }
+
+         &::-webkit-scrollbar-thumb{
+            //***** scrollbar-thumb mixin
+            @mixin scrollbar-thumb($background, $border-radius){
+               background: $background;
+               border-radius: $border-radius;
+            }
+
+            //***** scrollbar-thumb usage
+            @include scrollbar-thumb(#a8a7a7, 10 + 10px);
+          }
+
+          ul li{
+            //***** list item mixin
+            @mixin listItem($border-radius, $transition, $padding, $font-size, $letter-spacing, $color){
+               border-radius: $border-radius;
+               transition: $transition;
+               padding: $padding;
+               font-size: $font-size;
+               letter-spacing: $letter-spacing;
+               color: $color;
+            }
+
+            //***** list item usage
+            @include listItem(3px, ease-in-out .3s, 12.4px 10px, 13px, 3, #a8a7a7);
+         }
+
+         ul li:hover{
+          //***** list item hover mixin
+          @mixin listItemHover($font-size, $position, $color){
+            font-size: $font-size;
+            position: $position;
+            color: $color;
+            }
+
+            //***** list item hover usage
+            @include listItemHover(11px, relative, rgb(133, 130, 130));
+         }
+      }
+    }
+
+    section.weather-properties-sec{
+      //***** weather properties-sec mixin
+      @mixin weatherProperties-sec($background, $box-shadow, $cursor, $height, $padding, $left, $border-radius, $width, $position, $bottom, $justify-content, $overflow){
+         background: $background;
+         box-shadow: $box-shadow;
+         cursor: $cursor;
+         height: $height;
+         padding: $padding;
+         left: $left;
+         border-radius: $border-radius;
+         width: $width;
+         position: $position;
+         bottom: $bottom;
+         justify-content: $justify-content;
+         overflow-x: $overflow;
+         // -webkit-backdrop-filter: blur(1px);
+         // backdrop-filter: blur(1px);
+      }
+
+        //***** weather properties-sec usage
+        @include weatherProperties-sec(#fffbfb7c, 2px 2px 3rem rgba(224, 224, 224, 0.527), pointer, auto, 18px 3%, 11%, 4px, 80%, absolute, 12vh, center, hidden);
+
+
+      section.sec1{
+          //***** animation properties for first row
+          animation-name: translate;
+ 
+          @keyframes translate1{
+             0%{
+                transform: translateX(-20%);
+             }
+             100%{
+                transform: translateX(30%);
+             }
+          }
+      }
+
+      section.sec2{
+         //***** animation properties for second row
+         animation-name: translate;
+
+         @keyframes translate2{
+            0%{
+               -webkit-transform: translateX(30%);
+               -moz-transform: translateX(30%);
+               transform: translateX(30%);
+            }
+            100%{
+               -webkit-transform: translateX(-20%);
+               -moz-transform: translateX(-20%);
+               transform: translateX(-20%);
+            }
+         }
+     }
+
+      section.properties{
+         display: var(--flex-display);
+         justify-content: var(--justify-space-between);
+         flex-wrap: var(--flex-wrap);
+         gap: var(--gap);
+
+         //***** animation properties
+         animation-duration: var(--animation-duration);
+         animation-iteration-count: var(--animation-count-infinite);
+         animation-direction: var(--animation-direction);
+
+         div.con{
+            //***** weather property container mixin
+            @mixin weatherProperty($background, $padding, $border, $font-size, $box-shadow, $border-radius, $color, $font-weight){
+               background: $background;
+               padding: $padding;
+               border: $border;
+               font-size: $font-size;
+               box-shadow: $box-shadow;
+               border-radius: $border-radius;
+               color: $color;
+               font-weight: $font-weight;
+             }
+
+             //***** weather property container usage
+             @include weatherProperty(transparent, 12px 10px, 1.1px solid rgba(75, 74, 74, 0.712), 14.3px, 2px 1px 15px rgb(78, 77, 77), .3rem, #0e0e0e, 200 * 2);
+
+             
+             i.fas{
+               color: rgb(217, 214, 247);
+               animation-name: cloud;
+               animation-iteration-count: var(--animation-count-infinite);
+               animation-duration: 2 * 1s;
+               animation-timing-function: ease-in;
+               animation-direction: alternate-reverse;
+
+               @keyframes cloud{
+                  0%{
+                     -webkit-transform: scale(0.7);
+                     -moz-transform: scale(0.7);
+                     transform: scale(0.7);
+                  }
+                  100%{
+                     -webkit-transform: scale(1.3);
+                     -moz-transform: scale(1.3);
+                     transform: scale(1.3);
+                  }
+               }
+             }
+         }
+      }
+    }
+
+    //***** page scroll bar styles
+    &::-webkit-scrollbar-thumb{
+      //***** scrollbar-thumb mixin
+      @mixin scrollbar-thumb($background, $border-radius){
+         background: $background;
+         border-radius: $border-radius;
+      }
+      
+       //***** scrollbar-thumb usage
+       @include scrollbar-thumb(#414040, 10 + 10px);
+   }
+
+   &::-webkit-scrollbar{ 
+      width: 2 * 2px;
+      background: #eaeaea;
+   }
+
+   //***** footer
+   footer.footer{
+      position: relative;
+      margin-left: 11%;
+      top: 40 + 32svh;
+      background: #eaeaea;
+      width: 14rem;
+      padding: 10px;
+      border-radius: .2rem;
+
+      h3.footer-text{
+         font-size: 6 + 6px;
+         font-weight: 100;
+         color: #2c2c2cfd;
+         font-family: Arial, Helvetica, sans-serif;
+
+         i.fa{
+            color: rgb(255, 65, 65);
+         }
+
+         a:hover{
+            color: #6099eefd !important;
+            text-decoration: underline;
+         }
+      }
+   }
+}
+
+
+ //********* Media query, desktop first aproach *************//
+ @media screen and(max-width: 550px) {
+
+   body{
+      height:  130vh !important;
+
+      //***** input_field & result_box width variable
+      $width-input-field_result-box: 93%;
+
+      header.page-header{
+         margin-left: 9% !important;
+   
+         input[type=text]#input-box {
+            width: $width-input-field_result-box !important;
+         }
+   
+         div.result-box{
+            width: $width-input-field_result-box !important;
+         }
+      }
+   
+      section.weather-properties-sec {
+         bottom: -14rem !important;
+      }
+   
+      footer.footer{
+         top: 119svh;
+      }
+
+   }
+}
+
+
+@media screen and(max-width: 350px) {
+
+body{
+   height: 145vh;
+
+   section.weather-properties-sec {
+      bottom: -20rem !important;
+   }
+
+   footer.footer{
+      top: 139svh;
+   }
+}
+}

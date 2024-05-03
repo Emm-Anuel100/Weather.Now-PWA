@@ -2,7 +2,7 @@
 
 ![Weather App Screenshot](./public/Images/app-picture.PNG)
 
-A weather PWA that provides current time and weather informations for any city around the world. This app offers a user-friendly interface with features such as searching for cities, viewing temperature, humidity, and other weather conditions.
+A weather PWA that provides current time and weather informations for any city around the world. This app offers a user-friendly interface with features such as searching for cities, viewing temperature, humidity, current time and other weather conditions.
 
 ## Features
 

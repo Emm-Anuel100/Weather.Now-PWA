@@ -39,7 +39,7 @@ A weather PWA that provides current time and weather informations for any city a
    cd Weather.Now-PWA
     ```
 
-3. If you are using your android device you can get the apk file  [Here](/Android-Apk-file/android/)
+3. If you are using your android device you can get the apk file  [Here](/Android-Apk-Bundle/android/)
 
 
 ## Usage

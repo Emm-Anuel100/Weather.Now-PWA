@@ -14,7 +14,7 @@ A weather PWA that provides current time and weather informations for any city a
 
 ## Technologies Used
 
-- **HTML** for the structure of the app.
+- **HTML5** for the structure of the app.
 - **SCSS(SASSY CSS)** for styling and responsiveness.
 - **JavaScript** for interactivity and API integration.
 - **Weather API** for fetching real-time weather data.

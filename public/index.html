@@ -6,6 +6,8 @@
    <meta name="description" content="Chrome extension that allows users get current weather properties globally">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Weather.Now</title>
+   <link rel="manifest" href="/manifest.json">
+   
    <!-- Fav-Icon -->
    <link rel="shortcut icon" href="./Images/favicon.png" type="image/x-icon">
     <!-- FontAwesome cdn link  -->
@@ -18,7 +20,7 @@
 
 <body>
 <header class="page-header">
-  <form method="post" id="weatherForm">
+  <form method="post" id="weatherForm" enctype="multipart/form-data">
    <label for="input-box" class="input-label">Enter city name</label>
     <input type="text" name="" id="input-box" autocomplete="off" required>
     <button type="submit" title="search">
@@ -38,46 +40,46 @@
     </div>
     <div class="con">
       <i class="fas fa-cloud"></i> 
-       Temperature: <span id="temperature">0 &deg;C</span> 
+       Temperature: <span id="temperature">... &deg;C</span> 
     </div>
     <div class="con">
       <i class="fas fa-cloud"></i> 
-       Weather Condition: <span id="weatherDescription">Cloudy</span> 
+       Weather Condition: <span id="weatherDescription">...</span> 
     </div>
     <div class="con">
       <i class="fas fa-cloud"></i> 
-       Atmospheric Pressure: <span id="pressure">110 hPa</span>
+       Atmospheric Pressure: <span id="pressure">... hPa</span>
     </div>
     <div class="con">
       <i class="fas fa-cloud"></i> 
-       Wind Speed: <span id="windSpeed">320 m/s</span>
+       Wind Speed: <span id="windSpeed">... m/s</span>
     </div>
     <div class="con">
       <i class="fas fa-cloud"></i> 
-       Cloudiness: <span id="cloudiness">85%</span> 
+       Cloudiness: <span id="cloudiness">...%</span> 
     </div>
   </section><br/>
 
   <section class="properties sec2">
     <div class="con">
       <i class="fas fa-cloud"></i> 
-       Sunrise: <span id="sunrise">8:00 am</span> 
+       Sunrise: <span id="sunrise">.... am</span> 
     </div>
     <div class="con">
       <i class="fas fa-cloud"></i> 
-       Sunset: <span id="sunset">8:00pm</span> 
+       Sunset: <span id="sunset">....pm</span> 
     </div>
     <div class="con">
       <i class="fas fa-cloud"></i> 
-       Humidity: <span id="humidity">70%</span> 
+       Humidity: <span id="humidity">...%</span> 
     </div>
     <div class="con">
       <i class="fas fa-cloud"></i> 
-       Visibility: <span id="visibility">220 km</span>
+       Visibility: <span id="visibility">... km</span>
     </div>
     <div class="con">
       <i class="fas fa-cloud"></i> 
-       Feels like: <span id="feelsLike">47°C</span> 
+       Feels like: <span id="feelsLike">...°C</span> 
     </div>
     <div class="con">
       <i class="fas fa-cloud"></i> 
@@ -95,6 +97,7 @@
 </body>
 
 <!-- Scripts -->
+<script src="./app.js"></script>
 <script src="./Script/Weather-data.js" async></script>
 <script src="./Script/SearchBar.js" async></script>
 <script src="./Script/RandomBackground.js" async></script>

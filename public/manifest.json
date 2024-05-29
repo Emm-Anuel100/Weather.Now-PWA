@@ -1,0 +1,17 @@
+
+{
+   "name": "Weather.Now PWA",
+   "short_name": "Weather.Now",
+   "description": "A simple weather application",
+   "start_url": "/index.html",
+   "display": "standalone",
+   "background_color": "#ffffff",
+   "theme_color": "#3f51b5",
+   "icons": [
+       {
+           "src": "/Images/favicon.png",
+           "sizes": "48x48",
+           "type": "image/png"
+       }
+   ]
+}

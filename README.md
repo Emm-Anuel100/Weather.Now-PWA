@@ -1,6 +1,6 @@
 # Weather.Now-PWA
 
-![Weather App Screenshot](./public/Images/app-picture.PNG)
+![Weather App photo](./public/Images/app-picture.PNG)
 
 A weather PWA that provides current time and weather informations for any city around the world. This app offers a user-friendly interface with features such as searching for cities, viewing temperature, humidity, current time and other weather conditions.
 
@@ -14,7 +14,7 @@ A weather PWA that provides current time and weather informations for any city a
 
 ## Technologies Used
 
-- **HTML** for the structure of the app.
+- **HTML5** for the structure of the app.
 - **SCSS(SASSY CSS)** for styling and responsiveness.
 - **JavaScript** for interactivity and API integration.
 - **Weather API** for fetching real-time weather data.
@@ -23,7 +23,7 @@ A weather PWA that provides current time and weather informations for any city a
 ## Requirements
 
 - Modern web browser (Chrome, Firefox, Edge, Safari, etc.)
-- If you prefer using the app on your mobile phone, you will need an Android device.
+- If you prefer using the app on your mobile phone, it should be an Android device.
 
 ## Installation
 
@@ -39,7 +39,7 @@ A weather PWA that provides current time and weather informations for any city a
    cd Weather.Now-PWA
     ```
 
-3. If you are using your android device you can get the apk file  [Here](/Android-Apk-file/android/app-release.apk)
+3. If you are using your android device you can get the apk file  [Here](/Android-Apk-Bundle/android/)
 
 
 ## Usage

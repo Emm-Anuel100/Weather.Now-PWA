@@ -11,6 +11,7 @@ A weather PWA that provides current time and weather informations for any city a
 - Responsive design for seamless use on various devices.
 - Real-time updates for accurate weather information.
 - Integrated with a weather API for reliable data.
+- Service workers integration for caching.
 
 ## Technologies Used
 

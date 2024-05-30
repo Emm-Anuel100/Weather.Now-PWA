@@ -11,6 +11,7 @@ A weather PWA that provides current time and weather informations for any city a
 - Responsive design for seamless use on various devices.
 - Real-time updates for accurate weather information.
 - Integrated with a weather API for reliable data.
+- Utilized Service workers to cache essential app resources.
 
 ## Technologies Used
 
@@ -19,6 +20,7 @@ A weather PWA that provides current time and weather informations for any city a
 - **JavaScript** for interactivity and API integration.
 - **Weather API** for fetching real-time weather data.
 - **Api.TimezoneDb** for fetching current time.
+- **Firebase** for hosting.
 
 ## Requirements
 
